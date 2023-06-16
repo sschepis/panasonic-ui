@@ -1,0 +1,228 @@
+[
+    {
+        "hash": "def50088253f38900035e018f95ee610",
+        "conversation": [
+            {
+                "prompt": {
+                    "role": "user",
+                    "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                },
+                "response": "📤 src/pages/Plane.jsx",
+                "settings": {
+                    "key": "key",
+                    "temperature": 1,
+                    "max_tokens": 2048
+                }
+            }
+        ],
+        "count": 1
+    },
+    {
+        "hash": "5a8b81f34069fbd3c345da625bf890b6",
+        "conversation": [
+            [
+                {
+                    "prompt": {
+                        "role": "user",
+                        "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                    },
+                    "response": "📤 src/pages/Plane.jsx",
+                    "settings": {
+                        "key": "key",
+                        "temperature": 1,
+                        "max_tokens": 2048
+                    }
+                }
+            ],
+            {
+                "prompt": {
+                    "role": "user",
+                    "content": "📤 src/pages/Plane.jsx\nimport React from 'react';\nimport { useState } from 'react';\nimport Header from '../components/Header';\nimport SearchContainer from '../components/SearchContainer';\nimport Categories from '../components/Categories';\nimport FAQ from '../components/FAQ';\nimport FeaturedPlanes from '../components/FeaturedPlanes';\nimport Footer from '../components/Footer';\nimport { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n//import '../styles/Plane.css';\nconst [getResponse, setResponse] = useState('');\n\nconst handleButtonClick = async () => {\n  const conversation = {\n    // Fill with appropriate values for your use case\n    model: 'gpt-4',\n    temperature: 1,\n    max_tokens: 2048,\n    messages: [\n      // Add message conversation\n    ],\n    top_p: 1,\n  };\n\n  const openAIKey = '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';\n\n  try {\n    const responseText = await sendRequestToGPT4(conversation, openAIKey);\n    setGpt4Response(responseText);\n  } catch (error) {\n    console.error('Error:', error.message);\n  }\n};\n\nconst setGpt4Response = (responseText) => {\n  const response = JSON.parse(responseText);\n  const { choices } = response;\n  const { text } = choices[0];\n  setResponse(text);\n}\n\nconst Plane = ({ detailsVisible }) => {\n  return (\n    <div>\n      <Header />\n      <main>\n        <SearchContainer handleButtonClick={handleButtonClick} />\n        <div id=\"gpt4-response\">\n          <p>{getResponse}</p>\n        </div>\n        {detailsVisible && <Categories />}\n        {detailsVisible && <FAQ />}\n        {detailsVisible && <FeaturedPlanes />}\n      </main>\n      <Footer />\n    </div>\n  );\n};\n\nexport default Plane;\n"
+                },
+                "response": "📩 src/pages/Plane.jsx\n```diff\n-import React from 'react';\n-import { useState } from 'react';\n+import React, { useState } from 'react';\n import Header from '../components/Header';\n import SearchContainer from '../components/SearchContainer';\n import Categories from '../components/Categories';\n import FAQ from '../components/FAQ';\n import FeaturedPlanes from '../components/FeaturedPlanes';\n import Footer from '../components/Footer';\n import { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n-//import '../styles/Plane.css';\n-const [getResponse, setResponse] = useState('');\n+import '../styles/Plane.css';\n\n-const handleButtonClick = async () => {\n-  const conversation = {\n-    // Fill with appropriate values for your use case\n-    model: 'gpt-4',\n-    temperature: 1,\n-    max_tokens: 2048,\n-    messages: [\n-      // Add message conversation\n-    ],\n-    top_p: 1,\n-  };\n \n-  const openAIKey = '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';\n+const Plane = ({ detailsVisible }) => {\n+  const [getResponse, setResponse] = useState('');\n\n+  const handleButtonClick = async (inputData) => {\n+    const conversation = {\n+      // Fill with appropriate values for your use case\n+      model: 'gpt-4',\n+      temperature: 1,\n+      max_tokens: 2048,\n+      messages: [\n+        // Add message conversation\n+        {\n+          \"role\": \"system\",\n+          \"content\": \"You are an all-purpose software genius.\"\n",
+                "settings": {
+                    "key": "key",
+                    "temperature": 1,
+                    "max_tokens": 2048
+                }
+            }
+        ],
+        "count": 1
+    },
+    {
+        "hash": "ae8c8d0563fcce953cbb8a001b56a601",
+        "conversation": [
+            [
+                {
+                    "prompt": {
+                        "role": "user",
+                        "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                    },
+                    "response": "📤 src/pages/Plane.jsx",
+                    "settings": {
+                        "key": "key",
+                        "temperature": 1,
+                        "max_tokens": 2048
+                    }
+                }
+            ],
+            [
+                [
+                    {
+                        "prompt": {
+                            "role": "user",
+                            "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                        },
+                        "response": "📤 src/pages/Plane.jsx",
+                        "settings": {
+                            "key": "key",
+                            "temperature": 1,
+                            "max_tokens": 2048
+                        }
+                    }
+                ],
+                {
+                    "prompt": {
+                        "role": "user",
+                        "content": "📤 src/pages/Plane.jsx\nimport React from 'react';\nimport { useState } from 'react';\nimport Header from '../components/Header';\nimport SearchContainer from '../components/SearchContainer';\nimport Categories from '../components/Categories';\nimport FAQ from '../components/FAQ';\nimport FeaturedPlanes from '../components/FeaturedPlanes';\nimport Footer from '../components/Footer';\nimport { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n//import '../styles/Plane.css';\nconst [getResponse, setResponse] = useState('');\n\nconst handleButtonClick = async () => {\n  const conversation = {\n    // Fill with appropriate values for your use case\n    model: 'gpt-4',\n    temperature: 1,\n    max_tokens: 2048,\n    messages: [\n      // Add message conversation\n    ],\n    top_p: 1,\n  };\n\n  const openAIKey = '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';\n\n  try {\n    const responseText = await sendRequestToGPT4(conversation, openAIKey);\n    setGpt4Response(responseText);\n  } catch (error) {\n    console.error('Error:', error.message);\n  }\n};\n\nconst setGpt4Response = (responseText) => {\n  const response = JSON.parse(responseText);\n  const { choices } = response;\n  const { text } = choices[0];\n  setResponse(text);\n}\n\nconst Plane = ({ detailsVisible }) => {\n  return (\n    <div>\n      <Header />\n      <main>\n        <SearchContainer handleButtonClick={handleButtonClick} />\n        <div id=\"gpt4-response\">\n          <p>{getResponse}</p>\n        </div>\n        {detailsVisible && <Categories />}\n        {detailsVisible && <FAQ />}\n        {detailsVisible && <FeaturedPlanes />}\n      </main>\n      <Footer />\n    </div>\n  );\n};\n\nexport default Plane;\n"
+                    },
+                    "response": "📩 src/pages/Plane.jsx\n```diff\n-import React from 'react';\n-import { useState } from 'react';\n+import React, { useState } from 'react';\n import Header from '../components/Header';\n import SearchContainer from '../components/SearchContainer';\n import Categories from '../components/Categories';\n import FAQ from '../components/FAQ';\n import FeaturedPlanes from '../components/FeaturedPlanes';\n import Footer from '../components/Footer';\n import { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n-//import '../styles/Plane.css';\n-const [getResponse, setResponse] = useState('');\n+import '../styles/Plane.css';\n\n-const handleButtonClick = async () => {\n-  const conversation = {\n-    // Fill with appropriate values for your use case\n-    model: 'gpt-4',\n-    temperature: 1,\n-    max_tokens: 2048,\n-    messages: [\n-      // Add message conversation\n-    ],\n-    top_p: 1,\n-  };\n \n-  const openAIKey = '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';\n+const Plane = ({ detailsVisible }) => {\n+  const [getResponse, setResponse] = useState('');\n\n+  const handleButtonClick = async (inputData) => {\n+    const conversation = {\n+      // Fill with appropriate values for your use case\n+      model: 'gpt-4',\n+      temperature: 1,\n+      max_tokens: 2048,\n+      messages: [\n+        // Add message conversation\n+        {\n+          \"role\": \"system\",\n+          \"content\": \"You are an all-purpose software genius.\"\n",
+                    "settings": {
+                        "key": "key",
+                        "temperature": 1,
+                        "max_tokens": 2048
+                    }
+                }
+            ],
+            {
+                "prompt": {
+                    "role": "user",
+                    "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                },
+                "response": "📤 src/App.css",
+                "settings": {
+                    "key": "key",
+                    "temperature": 1,
+                    "max_tokens": 2048
+                }
+            }
+        ],
+        "count": 1
+    },
+    {
+        "hash": "ce7ae0bc5290235456fdcc5084056c83",
+        "conversation": [
+            [
+                {
+                    "prompt": {
+                        "role": "user",
+                        "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                    },
+                    "response": "📤 src/pages/Plane.jsx",
+                    "settings": {
+                        "key": "key",
+                        "temperature": 1,
+                        "max_tokens": 2048
+                    }
+                }
+            ],
+            [
+                [
+                    {
+                        "prompt": {
+                            "role": "user",
+                            "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                        },
+                        "response": "📤 src/pages/Plane.jsx",
+                        "settings": {
+                            "key": "key",
+                            "temperature": 1,
+                            "max_tokens": 2048
+                        }
+                    }
+                ],
+                {
+                    "prompt": {
+                        "role": "user",
+                        "content": "📤 src/pages/Plane.jsx\nimport React from 'react';\nimport { useState } from 'react';\nimport Header from '../components/Header';\nimport SearchContainer from '../components/SearchContainer';\nimport Categories from '../components/Categories';\nimport FAQ from '../components/FAQ';\nimport FeaturedPlanes from '../components/FeaturedPlanes';\nimport Footer from '../components/Footer';\nimport { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n//import '../styles/Plane.css';\nconst [getResponse, setResponse] = useState('');\n\nconst handleButtonClick = async () => {\n  const conversation = {\n    // Fill with appropriate values for your use case\n    model: 'gpt-4',\n    temperature: 1,\n    max_tokens: 2048,\n    messages: [\n      // Add message conversation\n    ],\n    top_p: 1,\n  };\n\n  const openAIKey = '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';\n\n  try {\n    const responseText = await sendRequestToGPT4(conversation, openAIKey);\n    setGpt4Response(responseText);\n  } catch (error) {\n    console.error('Error:', error.message);\n  }\n};\n\nconst setGpt4Response = (responseText) => {\n  const response = JSON.parse(responseText);\n  const { choices } = response;\n  const { text } = choices[0];\n  setResponse(text);\n}\n\nconst Plane = ({ detailsVisible }) => {\n  return (\n    <div>\n      <Header />\n      <main>\n        <SearchContainer handleButtonClick={handleButtonClick} />\n        <div id=\"gpt4-response\">\n          <p>{getResponse}</p>\n        </div>\n        {detailsVisible && <Categories />}\n        {detailsVisible && <FAQ />}\n        {detailsVisible && <FeaturedPlanes />}\n      </main>\n      <Footer />\n    </div>\n  );\n};\n\nexport default Plane;\n"
+                    },
+                    "response": "📩 src/pages/Plane.jsx\n```diff\n-import React from 'react';\n-import { useState } from 'react';\n+import React, { useState } from 'react';\n import Header from '../components/Header';\n import SearchContainer from '../components/SearchContainer';\n import Categories from '../components/Categories';\n import FAQ from '../components/FAQ';\n import FeaturedPlanes from '../components/FeaturedPlanes';\n import Footer from '../components/Footer';\n import { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n-//import '../styles/Plane.css';\n-const [getResponse, setResponse] = useState('');\n+import '../styles/Plane.css';\n\n-const handleButtonClick = async () => {\n-  const conversation = {\n-    // Fill with appropriate values for your use case\n-    model: 'gpt-4',\n-    temperature: 1,\n-    max_tokens: 2048,\n-    messages: [\n-      // Add message conversation\n-    ],\n-    top_p: 1,\n-  };\n \n-  const openAIKey = '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';\n+const Plane = ({ detailsVisible }) => {\n+  const [getResponse, setResponse] = useState('');\n\n+  const handleButtonClick = async (inputData) => {\n+    const conversation = {\n+      // Fill with appropriate values for your use case\n+      model: 'gpt-4',\n+      temperature: 1,\n+      max_tokens: 2048,\n+      messages: [\n+        // Add message conversation\n+        {\n+          \"role\": \"system\",\n+          \"content\": \"You are an all-purpose software genius.\"\n",
+                    "settings": {
+                        "key": "key",
+                        "temperature": 1,
+                        "max_tokens": 2048
+                    }
+                }
+            ],
+            [
+                [
+                    {
+                        "prompt": {
+                            "role": "user",
+                            "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                        },
+                        "response": "📤 src/pages/Plane.jsx",
+                        "settings": {
+                            "key": "key",
+                            "temperature": 1,
+                            "max_tokens": 2048
+                        }
+                    }
+                ],
+                [
+                    [
+                        {
+                            "prompt": {
+                                "role": "user",
+                                "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                            },
+                            "response": "📤 src/pages/Plane.jsx",
+                            "settings": {
+                                "key": "key",
+                                "temperature": 1,
+                                "max_tokens": 2048
+                            }
+                        }
+                    ],
+                    {
+                        "prompt": {
+                            "role": "user",
+                            "content": "📤 src/pages/Plane.jsx\nimport React from 'react';\nimport { useState } from 'react';\nimport Header from '../components/Header';\nimport SearchContainer from '../components/SearchContainer';\nimport Categories from '../components/Categories';\nimport FAQ from '../components/FAQ';\nimport FeaturedPlanes from '../components/FeaturedPlanes';\nimport Footer from '../components/Footer';\nimport { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n//import '../styles/Plane.css';\nconst [getResponse, setResponse] = useState('');\n\nconst handleButtonClick = async () => {\n  const conversation = {\n    // Fill with appropriate values for your use case\n    model: 'gpt-4',\n    temperature: 1,\n    max_tokens: 2048,\n    messages: [\n      // Add message conversation\n    ],\n    top_p: 1,\n  };\n\n  const openAIKey = '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';\n\n  try {\n    const responseText = await sendRequestToGPT4(conversation, openAIKey);\n    setGpt4Response(responseText);\n  } catch (error) {\n    console.error('Error:', error.message);\n  }\n};\n\nconst setGpt4Response = (responseText) => {\n  const response = JSON.parse(responseText);\n  const { choices } = response;\n  const { text } = choices[0];\n  setResponse(text);\n}\n\nconst Plane = ({ detailsVisible }) => {\n  return (\n    <div>\n      <Header />\n      <main>\n        <SearchContainer handleButtonClick={handleButtonClick} />\n        <div id=\"gpt4-response\">\n          <p>{getResponse}</p>\n        </div>\n        {detailsVisible && <Categories />}\n        {detailsVisible && <FAQ />}\n        {detailsVisible && <FeaturedPlanes />}\n      </main>\n      <Footer />\n    </div>\n  );\n};\n\nexport default Plane;\n"
+                        },
+                        "response": "📩 src/pages/Plane.jsx\n```diff\n-import React from 'react';\n-import { useState } from 'react';\n+import React, { useState } from 'react';\n import Header from '../components/Header';\n import SearchContainer from '../components/SearchContainer';\n import Categories from '../components/Categories';\n import FAQ from '../components/FAQ';\n import FeaturedPlanes from '../components/FeaturedPlanes';\n import Footer from '../components/Footer';\n import { sendRequestToGPT4 } from '../helpers/gpt4api';\n\n-//import '../styles/Plane.css';\n-const [getResponse, setResponse] = useState('');\n+import '../styles/Plane.css';\n\n-const handleButtonClick = async () => {\n-  const conversation = {\n-    // Fill with appropriate values for your use case\n-    model: 'gpt-4',\n-    temperature: 1,\n-    max_tokens: 2048,\n-    messages: [\n-      // Add message conversation\n-    ],\n-    top_p: 1,\n-  };\n \n-  const openAIKey = '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';\n+const Plane = ({ detailsVisible }) => {\n+  const [getResponse, setResponse] = useState('');\n\n+  const handleButtonClick = async (inputData) => {\n+    const conversation = {\n+      // Fill with appropriate values for your use case\n+      model: 'gpt-4',\n+      temperature: 1,\n+      max_tokens: 2048,\n+      messages: [\n+        // Add message conversation\n+        {\n+          \"role\": \"system\",\n+          \"content\": \"You are an all-purpose software genius.\"\n",
+                        "settings": {
+                            "key": "key",
+                            "temperature": 1,
+                            "max_tokens": 2048
+                        }
+                    }
+                ],
+                {
+                    "prompt": {
+                        "role": "user",
+                        "content": "🌳 .gitignore\nREADME.md\nconversations.json\nhistory.json\nnode_modules\npackage-lock.json\npackage.json\nplane-home.html\npublic\npuck.log\nsrc"
+                    },
+                    "response": "📤 src/App.css",
+                    "settings": {
+                        "key": "key",
+                        "temperature": 1,
+                        "max_tokens": 2048
+                    }
+                }
+            ],
+            {
+                "prompt": {
+                    "role": "user",
+                    "content": "📤 src/App.css\nbody {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n}\n\nheader {\n    background-color: #f7f7f7;\n    padding: 20px;\n    text-align: center;\n    font-size: 2em;\n}\n\nmain {\n    padding: 40px;\n}\n\n.search-container {\n    text-align: center;\n    margin-bottom: 30px;\n}\n\ninput[type=\"text\"] {\n    width: 70%;\n    padding: 10px;\n    border: 1px solid #ccc;\n}\n\ninput[type=\"submit\"] {\n    padding: 9px 20px;\n    background-color: #4CAF50;\n    color: #fff;\n    cursor: pointer;\n    border: 1px solid #4CAF50;\n}\n\n.faq {\n    padding: 20px 0;\n}\n\n.faq h3 {\n    font-size: 1.5em;\n    margin-bottom: 20px;\n}\n\n.faq ul {\n    list-style-type: none;\n    padding-left: 0;\n}\n\n.faq ul li {\n    margin-bottom: 10px;\n}\n\n.categories {\n    padding: 20px 0;\n}\n\n.categories h3 {\n    font-size: 1.5em;\n    margin-bottom: 20px;\n}\n\n.categories ul {\n    columns: 2; /* create two columns */\n    list-style-type: none;\n    padding-left: 0;\n}\n\n.categories ul li {\n    margin-bottom: 10px;\n}\n"
+                },
+                "response": "📩 src/App.css\n@@ -25,6 +25,7 @@\n }\n\n .faq {\n+    text-align: center;\n     padding: 20px 0;\n }\n\n@@ -43,6 +44,7 @@\n }\n\n .categories {\n+    text-align: center;\n     padding: 20px 0;\n }\n\nApply this universal diff patch to the src/App.css file to center the Aircraft Categories, recently asked questions, and featured planes sections. Let me know if you need any further assistance.",
+                "settings": {
+                    "key": "key",
+                    "temperature": 1,
+                    "max_tokens": 2048
+                }
+            }
+        ],
+        "count": 1
+    }
+]
